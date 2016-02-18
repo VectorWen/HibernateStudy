@@ -1,0 +1,45 @@
+<?xml version='1.0' encoding='utf-8'?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+	
+	<hibernate-configuration>
+	<session-factory>
+
+		<!-- Hibernate说，你不需要自己连接数据库，配置好了自动连接上数据库 -->
+		<!-- Database connection settings -->
+		<property name="connection.driver_class">com.microsoft.sqlserver.jdbc.SQLServerDriver</property>
+		<property name="connection.url">jdbc:sqlserver://127.0.0.1:1433;databaseName=Vector;user=VectorHuang;password=hlw123456</property>
+		<property name="connection.username">VectorHuang</property>
+		<property name="connection.password">hlw123456</property>
+
+		<!-- 连接池 -->
+		<!-- JDBC connection pool (use the built-in) -->
+		<!-- <property name="connection.pool_size">1</property> -->
+		
+		<!-- SQL 方言，为了统一全部数据库，告诉Hibernate 需要和哪种数据库通话
+			 我用的是SQLServer2008
+		 -->
+		<!-- SQL dialect -->
+		<property name="dialect">org.hibernate.dialect.SQLServer2008Dialect</property>
+
+		<!-- Enable Hibernate's automatic session context management -->
+		<!-- <property name="current_session_context_class">thread</property> -->
+
+		<!-- 二级缓存 -->
+		<!-- Disable the second-level cache -->
+		<property name="cache.provider_class">org.hibernate.cache.NoCacheProvider</property>
+
+		<!-- 是否打印SQL语句 -->
+		<!-- Echo all executed SQL to stdout -->
+		<property name="show_sql">true</property>
+
+		<!-- ddl:数据定义语言，是否让Hibernate 帮忙自动生成简表语句 -->
+		<!-- Drop and re-create the database schema on startup -->
+		<!-- <property name="hbm2ddl.auto">update</property> -->
+
+		<mapping resource="com/vector/hibernate/hello/model/Hello.hbm.xml" />
+		<mapping class="com.vector.hibernate.hello.model.HelloAnnotation" />
+	</session-factory>
+
+</hibernate-configuration>

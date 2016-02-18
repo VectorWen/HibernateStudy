@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC
+        "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping package="com.vector.hibernate.hello.model">
+	
+	<!-- table 不写对应数据库的表名就和name 一样 -->
+	<class name="Hello" table="Hello">
+		<!-- 不写column 那么表里面的字段就和name 一样 -->
+		<id name="id" column="id" ></id>
+		<property name="title"></property>
+	</class>
+</hibernate-mapping>
