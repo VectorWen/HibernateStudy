@@ -1,14 +1,13 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 
-	http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.vector.hibernate</groupId>
-	<artifactId>001HelloWorld</artifactId>
+	<artifactId>002SmallKnowledgePoints</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<packaging>jar</packaging>
 
-	<name>001HelloWorld</name>
+	<name>002SmallKnowledgePoints</name>
 	<url>http://maven.apache.org</url>
 
 	<properties>
@@ -17,7 +16,7 @@
 
 	<build>
 		<!-- we dont want the version to be part of the generated war file name -->
-		<finalName>${artifactId}</finalName>
+		<finalName>${project.artifactId}</finalName>
 		<plugins>
 			<!-- 依赖插件 -->
 			<plugin>
@@ -39,11 +38,11 @@
 			<version>4.7</version>
 			<scope>test</scope>
 		</dependency>
-		
+
 		<dependency>
-		    <groupId>com.microsoft.sqlserver</groupId>
-		    <artifactId>sqljdbc4</artifactId>
-		    <version>4.0</version>
+			<groupId>com.microsoft.sqlserver</groupId>
+			<artifactId>sqljdbc4</artifactId>
+			<version>4.0</version>
 		</dependency>
 
 		<dependency>
@@ -54,12 +53,31 @@
 
 		<!-- Hibernate uses slf4j for logging, for our purposes here use the simple 
 			backend -->
-		<dependency>
-			<groupId>org.slf4j</groupId>
-			<artifactId>slf4j-simple</artifactId>
+		<!-- 默认给一个slf4j 的最简单最垃圾的日志实现 -->
+		<!-- 
+			<dependency>
+				<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-simple</artifactId>
+				<version>1.7.5</version>
+			</dependency>
+ 		-->
+ 			<dependency>
+		 		<groupId>org.slf4j</groupId>
+				<artifactId>slf4j-nop</artifactId>
+				<version>1.7.5</version>
+			</dependency>
+ 		<!--  -->
+ 		<!-- <dependency>
+		 	<groupId>org.slf4j</groupId>
+			<artifactId>slf4j-log4j12</artifactId>
 			<version>1.7.5</version>
-		</dependency>
-
+			</dependency>
+ 		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency> -->
+ 		
 		<!-- Hibernate gives you a choice of bytecode providers between cglib and 
 			javassist -->
 		<dependency>
@@ -68,6 +86,4 @@
 			<version>3.12.1.GA</version>
 		</dependency>
 	</dependencies>
-
 </project>
-
