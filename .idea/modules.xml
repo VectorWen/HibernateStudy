@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/001HelloWorld/001HelloWorld.iml" filepath="$PROJECT_DIR$/001HelloWorld/001HelloWorld.iml" />
+      <module fileurl="file://$PROJECT_DIR$/002SmallKnowledgePoints/002SmallKnowledgePoints.iml" filepath="$PROJECT_DIR$/002SmallKnowledgePoints/002SmallKnowledgePoints.iml" />
+      <module fileurl="file://$PROJECT_DIR$/HibernateStudy.iml" filepath="$PROJECT_DIR$/HibernateStudy.iml" />
+    </modules>
+  </component>
+</project>
